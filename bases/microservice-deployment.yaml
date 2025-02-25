@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice
+  name: pdqa-microservices
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: microservice
+      app: pdqa-microservices
   template:
     metadata:
       labels:
-        app: microservice
+        app: pdqa-microservices
     spec:
       containers:
-        - name: microservice
-          image: acquireinc/pdqa:microservices
+        - name: pdqa-microservices
+          image: ghcr.io/pelema/lasta-hub
           ports:
             - containerPort: 8080
           env:
@@ -27,12 +27,12 @@ spec:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: microservice-secret
+                  name: pdqa-microservices-secret
                   key: DB_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: microservice-secret
+                  name: pdqa-microservices-secret
                   key: DB_PASSWORD
 
       imagePullSecrets:
@@ -41,10 +41,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: microservice-service
+  name: pdqa-microservice-service
 spec:
   selector:
-    app: microservice
+    app: pdqa-microservices
   ports:
     - protocol: TCP
       port: 8080

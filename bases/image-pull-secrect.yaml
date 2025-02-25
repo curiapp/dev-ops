@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pdqa
+  namespace: pdqa-develop
+type: kubernetes.io/dockerconfigjson
+stringData:
+  .dockerconfigjson: |
+    {
+      "auths": {
+        "ghcr.io": {
+          "username": "pelema",
+          "password": "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"
+        }
+      }
+    }

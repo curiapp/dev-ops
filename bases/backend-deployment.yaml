@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: pdqa-backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: pdqa-backend
   template:
     metadata:
       labels:
-        app: backend
+        app: pdqa-backend
     spec:
       containers:
-        - name: backend
-          image: acquireinc/pdqa:backend
+        - name: pdqa-backend
+          image: ghcr.io/pelema/last-hub
           ports:
             - containerPort: 5000
           env:
@@ -27,10 +27,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: pdqa-backend-service
 spec:
   selector:
-    app: backend
+    app: pdqa-backend
   ports:
     - protocol: TCP
       port: 5000
