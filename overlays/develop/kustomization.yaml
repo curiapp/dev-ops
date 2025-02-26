@@ -8,4 +8,4 @@ kind: Kustomization
 namespace: pdqa-develop
 images:
 - name: ghcr.io/pelema/pdqa-backend
-  newTag: fca8689
+  newTag: 21fc3fe
