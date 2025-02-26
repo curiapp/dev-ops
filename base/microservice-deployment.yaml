@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pdqa-microservices
-          image: ghcr.io/pelema/lasta-hub
+          image: ghcr.io/pelema/pdqa-microservices
           ports:
             - containerPort: 8080
           env:

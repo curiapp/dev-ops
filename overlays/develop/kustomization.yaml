@@ -7,5 +7,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: pdqa-develop
 images:
-- name: ghcr.io/pelema/lasta-hub
-  newTag: backend-fca8689
+- name: ghcr.io/pelema/pdqa-backend
+  newTag: fca8689
