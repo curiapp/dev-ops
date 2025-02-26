@@ -1,7 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
+  name: pdqa-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: dev.pdqa
@@ -18,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: backend-service
+                name: pdqa-backend-service
                 port:
-                  number: 80
+                  number: 4931

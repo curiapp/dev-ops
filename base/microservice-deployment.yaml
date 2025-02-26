@@ -15,38 +15,40 @@ spec:
       containers:
         - name: pdqa-microservices
           image: ghcr.io/pelema/pdqa-microservices
-          ports:
-            - containerPort: 8080
+          # ports:
+          #   - containerPort: 8080
           env:
             - name: KAFKA_BROKER_HOST
-              value: "kafka-service:9092"
+              value: "host.minikube.internal:9092"
             - name: ZOOKEEPER_HOST_URL
-              value: "kafka-service:2181"
+              value: "host.minikube.internal:2181"
             - name: DB_URL
-              value: "couchbase-service"
+              value: "host.minikube.internal"
             - name: DB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: pdqa-microservices-secret
-                  key: DB_USER
+              value: "admin"
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: pdqa-microservices-secret
+              #     key: DB_USER
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: pdqa-microservices-secret
-                  key: DB_PASSWORD
+              value: "password"
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: pdqa-microservices-secret
+              #     key: DB_PASSWORD
 
       imagePullSecrets:
         - name: regcred
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: pdqa-microservice-service
-spec:
-  selector:
-    app: pdqa-microservices
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-  type: ClusterIP
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: pdqa-microservice-service
+# spec:
+#   selector:
+#     app: pdqa-microservices
+#   ports:
+#     - protocol: TCP
+#       port: 8080
+#       targetPort: 8080
+#   type: ClusterIP

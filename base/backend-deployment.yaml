@@ -16,10 +16,10 @@ spec:
         - name: pdqa-backend
           image: ghcr.io/pelema/pdqa-backend
           ports:
-            - containerPort: 5000
+            - containerPort: 4931
           env:
             - name: KAFKA_BROKER_HOST
-              value: "kafka-service:9092"
+              value: "host.minikube.internal:9092"
 
       imagePullSecrets:
         - name: regcred
@@ -33,6 +33,6 @@ spec:
     app: pdqa-backend
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 4931
+      targetPort: 4931
   type: ClusterIP
