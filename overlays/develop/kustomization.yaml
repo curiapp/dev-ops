@@ -1,7 +1,8 @@
 resources:
 - ../../base
 - ingress.yaml
-namePrefix: dev-
+- namespace.yaml
+# namePrefix: dev-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: pdqa-develop

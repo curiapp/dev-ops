@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pdqa-backend
-          image: ghcr.io/pelema/last-hub
+          image: ghcr.io/pelema/lasta-hub
           ports:
             - containerPort: 5000
           env:
