@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: pdqa-frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pdqa-frontend
