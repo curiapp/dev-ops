@@ -9,5 +9,7 @@ namespace: pdqa-develop
 images:
 - name: ghcr.io/pelema/pdqa-backend
   newTag: 34eaf03
+- name: ghcr.io/pelema/pdqa-frontend
+  newTag: 34eaf03
 - name: ghcr.io/pelema/pdqa-microservices
   newTag: d03c0a4
