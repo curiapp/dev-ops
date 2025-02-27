@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: pdqa-microservices
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: pdqa-microservices
@@ -39,16 +39,3 @@ spec:
 
       imagePullSecrets:
         - name: regcred
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: pdqa-microservice-service
-# spec:
-#   selector:
-#     app: pdqa-microservices
-#   ports:
-#     - protocol: TCP
-#       port: 8080
-#       targetPort: 8080
-#   type: ClusterIP

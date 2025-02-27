@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - backend-deployment.yaml
   - microservice-deployment.yaml
+  - frontend-deployment.yaml
   - image-pull-secret.yaml
