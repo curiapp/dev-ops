@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pdqa-frontend
-          image: ghcr.io/pelema/pdqa-frontend
+          image: ghcr.io/curiapp/pdqa-frontend
           ports:
             - containerPort: 80
       imagePullSecrets:

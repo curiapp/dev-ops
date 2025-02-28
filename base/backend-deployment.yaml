@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pdqa-backend
-          image: ghcr.io/pelema/pdqa-backend
+          image: ghcr.io/curiapp/pdqa-backend
           ports:
             - containerPort: 4931
           env:

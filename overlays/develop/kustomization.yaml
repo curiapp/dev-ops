@@ -7,9 +7,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: pdqa-develop
 images:
-- name: ghcr.io/pelema/pdqa-backend
+- name: ghcr.io/curiapp/pdqa-backend
   newTag: f0822eb
-- name: ghcr.io/pelema/pdqa-frontend
+- name: ghcr.io/curiapp/pdqa-frontend
   newTag: f0822eb
-- name: ghcr.io/pelema/pdqa-microservices
+- name: ghcr.io/curiapp/pdqa-microservices
   newTag: d03c0a4
