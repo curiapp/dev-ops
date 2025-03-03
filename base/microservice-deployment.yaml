@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pdqa-microservices
-          image: ghcr.io/curiapp/pdqa-microservices
+          image: ghcr.io/curiapp/curdev/pdqa-microservices
           # ports:
           #   - containerPort: 8080
           env:
