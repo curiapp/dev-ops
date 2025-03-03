@@ -8,4 +8,4 @@ kind: Kustomization
 namespace: pdqa-develop
 images:
 - name: ghcr.io/curiapp/curdev/pdqa-microservices
-  newTag: 387ca67
+  newTag: b4b75d8
