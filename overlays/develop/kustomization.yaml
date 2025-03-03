@@ -6,3 +6,6 @@ resources:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: pdqa-develop
+images:
+- name: ghcr.io/curiapp/curdev/pdqa-microservices
+  newTag: 387ca67
