@@ -35,4 +35,4 @@ spec:
     - protocol: TCP
       port: 4931
       targetPort: 4931
-  type: ClusterIP
+  type: LoadBalancer
