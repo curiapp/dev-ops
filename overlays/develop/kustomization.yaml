@@ -1,6 +1,6 @@
+# - ingress.yaml
 resources:
 - ../../base
-# - ingress.yaml
 - namespace.yaml
 # namePrefix: dev-
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -10,6 +10,6 @@ images:
 - name: ghcr.io/curiapp/curdev/pdqa-microservices
   newTag: "4158177"
 - name: ghcr.io/curiapp/lasta-hub/pdqa-backend
-  newTag: 878f347
+  newTag: ead3ad6
 - name: ghcr.io/curiapp/lasta-hub/pdqa-frontend
   newTag: 878f347
