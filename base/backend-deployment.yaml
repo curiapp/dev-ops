@@ -19,10 +19,10 @@ spec:
             - containerPort: 4931
           env:
             - name: KAFKA_BROKER_HOST
-              value: "host.minikube.internal:9092"
+              value: "196.216.167.190:9092"
 
-      imagePullSecrets:
-        - name: regcred
+      # imagePullSecrets:
+      #   - name: ghcr-secret
 ---
 apiVersion: v1
 kind: Service
