@@ -29,7 +29,12 @@ spec:
   selector:
     app: pdqa-frontend
   ports:
-    - protocol: TCP
-      port: 4000
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 4000
+    - name: https
+      protocol: TCP
+      port: 443
       targetPort: 4000
   type: NodePort
