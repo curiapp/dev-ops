@@ -32,7 +32,12 @@ spec:
   selector:
     app: pdqa-backend
   ports:
-    - protocol: TCP
-      port: 4931
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 4931
+    - name: https
+      protocol: TCP
+      port: 443
       targetPort: 4931
   type: LoadBalancer
