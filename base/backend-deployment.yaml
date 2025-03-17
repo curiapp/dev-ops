@@ -11,11 +11,11 @@ spec:
     metadata:
       labels:
         app: pdqa-backend
-    volumes:
-      - name: pdqa-pv-storage
-        persistentVolumeClaim:
-          claimName: pdqa-pv-claim
     spec:
+      volumes:
+        - name: pdqa-pv-storage
+          persistentVolumeClaim:
+            claimName: pdqa-pv-claim
       containers:
         - name: pdqa-backend
           image: ghcr.io/curiapp/lasta-hub/pdqa-backend
