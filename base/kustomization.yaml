@@ -5,3 +5,5 @@ resources:
   - microservice-deployment.yaml
   - frontend-deployment.yaml
   - image-pull-secret.yaml
+  - storage/persistent-volume.yaml
+  - storage/persistent-volume-claim.yaml
