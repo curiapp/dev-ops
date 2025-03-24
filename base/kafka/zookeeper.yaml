@@ -44,6 +44,7 @@ spec:
         name: zookeeper-data
       spec:
         volumeName: pdqa-zookeeper-data-pv-volume
+        storageClassName: manual
         accessModes:
           - ReadWriteOnce
         resources:
@@ -54,6 +55,7 @@ spec:
         name: zookeeper-logs
       spec:
         volumeName: pdqa-zookeeper-logs-pv-volume
+        storageClassName: manual
         accessModes:
           - ReadWriteOnce
         resources:
