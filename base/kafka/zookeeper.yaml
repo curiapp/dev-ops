@@ -17,6 +17,7 @@ spec:
         service: zookeeper
     spec:
       securityContext:
+        runAsUser: 1000
         fsGroup: 1000
       enableServiceLinks: false
       containers:

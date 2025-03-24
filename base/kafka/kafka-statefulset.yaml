@@ -17,6 +17,7 @@ spec:
         service: kafka
     spec: 
       securityContext:
+        runAsUser: 1000
         fsGroup: 1000
       enableServiceLinks: false
       initContainers:
