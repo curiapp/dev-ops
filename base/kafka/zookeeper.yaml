@@ -16,10 +16,21 @@ spec:
     #     network/kafka-network: "true"
         service: zookeeper
     spec:
-      # securityContext:
-      #   runAsUser: 1000
-      #   fsGroup: 1000
+      securityContext:
+        runAsUser: 0
+        fsGroup: 1000
       enableServiceLinks: false
+      # initContainers:
+      # - name: fix-permissions
+      #   image: busybox
+      #   command: ["sh", "-c", "chown -R 1000:1000 /var/lib/zookeeper/data /var/lib/zookeeper/log"]
+      #   securityContext:
+      #     runAsUser: 0
+      #   volumeMounts:
+      #     - mountPath: /var/lib/zookeeper/data
+      #       name: zookeeper-data
+      #     - mountPath: /var/lib/zookeeper/log
+      #       name: zookeeper-logs
       containers:
       - name: zookeeper
         image: confluentinc/cp-zookeeper:7.3.2
