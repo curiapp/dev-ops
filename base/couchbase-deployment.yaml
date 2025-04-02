@@ -1,35 +1,70 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: couchbase
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: couchbase
-  template:
-    metadata:
-      labels:
-        app: couchbase
-    spec:
-      containers:
-        - name: couchbase
-          image: couchbase:latest
-          env:
-            - name: COUCHBASE_ADMINISTRATOR_USERNAME
-              value: "admin"
-            - name: COUCHBASE_ADMINISTRATOR_PASSWORD
-              value: "password"
----
 apiVersion: v1
-kind: Service
+kind: Secret
 metadata:
-  name: couchbase-service
+  name: pdqa-db-auth
+type: Opaque
+data:
+  username: YWRtaW4= # admin
+  password: cGFzc3dvcmQ=         # password
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: yester-curricula-dev
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: yester-need-analyses
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: yester-need-curricula-dev
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: yester-programmes
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseBucket
+metadata:
+  name: yester-users
+
+---
+
+apiVersion: couchbase.com/v2
+kind: CouchbaseCluster
+metadata:
+  name: pdqa-db-cluster
 spec:
-  selector:
-    app: couchbase
-  ports:
-    - protocol: TCP
-      port: 8091
-      targetPort: 8091
-  type: ClusterIP
+  image: couchbase/server:7.6.0
+  security:
+    adminSecret: pdqa-db-auth
+  networking:
+    exposeAdminConsole: true
+    adminConsoleServices:
+    - data
+  buckets:
+    managed: true
+  servers:
+  - size: 1
+    name: all_services
+    services:
+    - data
+    - index
+    - query
+    - search
+    - eventing
+    - analytics
