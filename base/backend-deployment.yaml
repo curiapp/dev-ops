@@ -26,7 +26,7 @@ spec:
               value: "196.216.167.190:9092"
             - name: DB_URL
               value: "196.216.167.190"
-              
+
           volumeMounts:
             - mountPath: "/app/documents"
               name: pdqa-pv-storage
