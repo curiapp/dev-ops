@@ -21,4 +21,4 @@ spec:
             service:
               name: pdqa-backend-service
               port:
-                number: 4931
+                number: 80

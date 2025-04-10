@@ -37,5 +37,5 @@ spec:
       protocol: TCP
       port: 443
       targetPort: 4000
-  type: LoadBalancer
-  loadBalancerIP: 196.216.167.202
+  type: ClusterIP
+  # loadBalancerIP: 196.216.167.202
