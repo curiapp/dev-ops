@@ -50,4 +50,4 @@ spec:
       protocol: TCP
       port: 443
       targetPort: 4931
-  type: LoadBalancer
+  type: ClusterIP
