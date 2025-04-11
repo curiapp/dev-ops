@@ -38,4 +38,4 @@ spec:
       port: 443
       targetPort: 4000
   type: LoadBalancer
-  loadBalancerIP: 196.216.167.203
+  loadBalancerIP: 196.216.167.210
