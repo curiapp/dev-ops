@@ -5,8 +5,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    # - host: "develop.pdqa"
-  -  http:
+  - host: "cd.nust.na"
+    http:
       paths:
         - path: /
           pathType: Prefix
