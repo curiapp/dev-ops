@@ -6,7 +6,7 @@ spec:
   ingressClassName: nginx
   rules:
   # - host: "cd.nust.na"
-    - http:
+  - http:
       paths:
         - path: /
           pathType: Prefix
