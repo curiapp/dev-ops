@@ -12,19 +12,19 @@ spec:
     secretName: tls-secret
   rules:
   - host: cd.nust.na
-  - http:
+    http:
       paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: pdqa-frontend-service
-              port:
-                number: 80
-        - path: /api
-          pathType: Prefix
-          backend:
-            service:
-              name: pdqa-backend-service
-              port:
-                number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pdqa-frontend-service
+            port:
+              number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: pdqa-backend-service
+            port:
+              number: 80
