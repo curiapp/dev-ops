@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: postgres
 spec:
+  serviceName: "postgres"
   replicas: 1
   selector:
     matchLabels:
@@ -23,8 +24,8 @@ spec:
                 name: postgres-secret
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgresdata
+              name: postgres-data
       volumes:
-        - name: postgresdata
+        - name: postgres-data
           persistentVolumeClaim:
             claimName: postgres-volume-claim
