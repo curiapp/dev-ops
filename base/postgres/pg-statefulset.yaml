@@ -23,7 +23,7 @@ spec:
             - configMapRef:
                 name: postgres-secret
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: /var/lib/postgresql/18/docker
               name: postgres-data
       volumes:
         - name: postgres-data
