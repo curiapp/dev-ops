@@ -8,3 +8,4 @@ data:
   POSTGRES_DB: pdqa_dev
   POSTGRES_USER: root
   POSTGRES_PASSWORD: SecurePassword
+  PGDATA: /var/lib/postgresql/data
