@@ -8,3 +8,4 @@ resources:
   - storage/persistent-volume.yaml
   - storage/persistent-volume-claim.yaml
   - kafka
+  - postgres
