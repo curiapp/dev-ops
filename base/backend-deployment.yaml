@@ -24,8 +24,10 @@ spec:
           env:
             - name: KAFKA_BROKER_HOST
               value: "196.216.167.190:9092"
-            - name: DB_URL
-              value: "196.216.167.190"
+            - name: DATABASE_URL
+              value: "postgresql://root:SecurePassword@100.106.120.50:32639/pdqa_dev"
+            - name: JWT_SECRET
+            - value: "0068439adcde23481a38fce4bd8203e6ab6e189b"
 
           volumeMounts:
             - mountPath: "/app/files"
