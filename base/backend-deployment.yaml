@@ -27,7 +27,7 @@ spec:
             - name: JWT_SECRET
               value: "0068439adcde23481a38fce4bd8203e6ab6e189b"
             - name: PORT
-              value: 4931
+              value: "4931"
 
           volumeMounts:
             - mountPath: "/app/files"
