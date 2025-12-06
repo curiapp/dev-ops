@@ -10,6 +10,6 @@ images:
 - name: ghcr.io/curiapp/curdev/pdqa-microservices
   newTag: "4158177"
 - name: ghcr.io/curiapp/lasta-hub/pdqa-backend
-  newTag: 73eab53
+  newTag: f564b8f
 - name: ghcr.io/curiapp/lasta-hub/pdqa-frontend
   newTag: 73eab53
