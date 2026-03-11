@@ -12,4 +12,4 @@ images:
 - name: ghcr.io/curiapp/lasta-hub/pdqa-backend
   newTag: c00a4b2
 - name: ghcr.io/curiapp/lasta-hub/pdqa-frontend
-  newTag: f8d0a2b
+  newTag: c00a4b2
