@@ -23,7 +23,7 @@ spec:
             - containerPort: 4931
           env:
             - name: DATABASE_URL
-              value: "postgresql://root:SecurePassword@100.106.120.50:32639/pdqa_dev"
+              value: "postgresql://root:SecurePassword@192.168.166.128:32639/pdqa_dev"
             - name: JWT_SECRET
               value: "0068439adcde23481a38fce4bd8203e6ab6e189b"
             - name: PORT
