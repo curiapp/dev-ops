@@ -30,7 +30,7 @@ spec:
               value: "4931"
 
           volumeMounts:
-            - mountPath: "/app/files"
+            - mountPath: "/app/uploads"
               name: pdqa-pv-storage
 
       # imagePullSecrets:
